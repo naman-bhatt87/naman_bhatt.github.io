@@ -189,7 +189,7 @@ body {
 
 /* Hero Section */
 .hero {
-  background: var(--gradient-hero);
+  background: var(--color-background); /* White background */
   color: var(--color-primary);
   padding: 120px 0 80px;
   text-align: center;
@@ -202,16 +202,16 @@ body {
 .hero-description,
 .hero-meta p,
 .hero-meta a {
-  color: var(--color-navy-dark); /* Use a strong blue for text on hero */
+  color: var(--color-primary); /* Use main blue-grey for text */
 }
 
 .hero-description {
-  color: var(--color-navy-dark); /* Ensure description is also blue */
+  color: var(--color-primary);
 }
 
 .hero-meta p,
 .hero-meta a {
-  color: var(--color-navy-dark); /* Meta info in blue */
+  color: var(--color-primary);
 }
 
 .hero-content {
