@@ -21,7 +21,7 @@ jobs:
       - name: Prepare site content
         run: |
           mkdir _site
-          cp -r * _site/
+          rsync -av --exclude='_site' ./ _site/
           # Exclude workflow files and .gitignore if needed
 
       - name: Upload artifact
