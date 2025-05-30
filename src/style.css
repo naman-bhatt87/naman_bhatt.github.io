@@ -197,14 +197,21 @@ body {
   overflow: hidden;
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.1);
+.hero-title,
+.hero-subtitle,
+.hero-description,
+.hero-meta p,
+.hero-meta a {
+  color: var(--color-navy-dark); /* Use a strong blue for text on hero */
+}
+
+.hero-description {
+  color: var(--color-navy-dark); /* Ensure description is also blue */
+}
+
+.hero-meta p,
+.hero-meta a {
+  color: var(--color-navy-dark); /* Meta info in blue */
 }
 
 .hero-content {
