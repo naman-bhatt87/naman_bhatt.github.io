@@ -188,6 +188,7 @@
                 <button class="filter-btn" data-category="Leadership">Leadership</button>
             </div>
             <div class="blog-grid" id="blog-grid">
+                <!--
                 <article class="blog-card" data-category="Enterprise Architecture">
                     <div class="blog-content">
                         <div class="blog-meta">
@@ -199,6 +200,7 @@
                         <a href="#" class="read-more-btn">Read More</a>
                     </div>
                 </article>
+                -->
                 <article class="blog-card" data-category="MLOps & AI">
                     <div class="blog-content">
                         <div class="blog-meta">
@@ -208,30 +210,31 @@
                         <h3>The Silent AI Evaluation Crisis Costing Enterprises Millions</h3>
                         <p>AI systems are failing enterprises at an alarming rate—not because the tech isn’t advanced, but because we’re not asking the right questions during evaluation.</p>
                         <a href="https://www.linkedin.com/pulse/silent-ai-evaluation-crisis-costing-enterprises-millions-bhatt-4dthc" class="read-more-btn" target="_blank" rel="noopener noreferrer">Read More</a>
-                    </div>
-                </article>
-                <article class="blog-card" data-category="Cloud Technologies">
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">Cloud Technologies</span>
-                            <span class="blog-date">November 10, 2024</span>
-                        </div>
-                        <h3>Multi-Cloud Strategy: Lessons from the Trenches</h3>
-                        <p>Real-world insights from implementing multi-cloud architectures in large financial services organizations.</p>
-                        <a href="#" class="read-more-btn">Read More</a>
-                    </div>
-                </article>
-                <article class="blog-card" data-category="Leadership">
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">Leadership</span>
-                            <span class="blog-date">October 22, 2024</span>
-                        </div>
-                        <h3>Leading Technology Teams Through Digital Transformation</h3>
-                        <p>Strategies for managing large-scale technology teams during enterprise transformation initiatives.</p>
-                        <a href="#" class="read-more-btn">Read More</a>
-                    </div>
-                </article>
+                    <!--
+                                    </article>
+                                    <article class="blog-card" data-category="Cloud Technologies">
+                                        <div class="blog-content">
+                                            <div class="blog-meta">
+                                                <span class="blog-category">Cloud Technologies</span>
+                                                <span class="blog-date">November 10, 2024</span>
+                                            </div>
+                                            <h3>Multi-Cloud Strategy: Lessons from the Trenches</h3>
+                                            <p>Real-world insights from implementing multi-cloud architectures in large financial services organizations.</p>
+                                            <a href="#" class="read-more-btn">Read More</a>
+                                        </div>
+                                    </article>
+                                    <article class="blog-card" data-category="Leadership">
+                                        <div class="blog-content">
+                                            <div class="blog-meta">
+                                                <span class="blog-category">Leadership</span>
+                                                <span class="blog-date">October 22, 2024</span>
+                                            </div>
+                                            <h3>Leading Technology Teams Through Digital Transformation</h3>
+                                            <p>Strategies for managing large-scale technology teams during enterprise transformation initiatives.</p>
+                                            <a href="#" class="read-more-btn">Read More</a>
+                                        </div>
+                                    </article>
+                    -->
             </div>
             <div class="newsletter">
                 <h3>Subscribe to Newsletter</h3>
@@ -268,6 +271,7 @@
                         <a href="./dashboards/aiops-india-dashboard/index.html" class="btn btn--primary" target="_blank" rel="noopener noreferrer">View Dashboard</a>
                     </div>
                 </div>
+                <!--
                 <div class="dashboard-card">
                     <div class="dashboard-preview">
                         <div class="chart-mockup">
@@ -319,6 +323,7 @@
                         <button class="btn btn--primary">View Dashboard</button>
                     </div>
                 </div>
+                -->
             </div>
         </div>
     </section>
@@ -358,5 +363,39 @@
     </footer>
 
     <script src="src/app.js"></script>
+    <script>
+        // Generic button-to-link redirection for dashboards and blog cards
+
+        document.addEventListener('DOMContentLoaded', function () {
+          // For dashboard cards: find buttons inside .dashboard-card that have a sibling <a> with href
+          document.querySelectorAll('.dashboard-card').forEach(card => {
+            const btn = card.querySelector('.btn--primary');
+            // If the button is an <a>, do nothing (native link)
+            if (btn && btn.tagName !== 'A') {
+              // Try to find an <a> inside the card for the target URL
+              const link = card.querySelector('a[href]');
+              if (link) {
+                btn.addEventListener('click', function (e) {
+                  window.open(link.href, link.target === '_blank' ? '_blank' : '_self');
+                });
+              }
+            }
+          });
+
+          // For blog cards: find buttons or links with .read-more-btn
+          document.querySelectorAll('.blog-card').forEach(card => {
+            const btn = card.querySelector('.read-more-btn');
+            if (btn && btn.tagName !== 'A') {
+              // Try to find an <a> inside the card for the target URL
+              const link = card.querySelector('a[href]');
+              if (link) {
+                btn.addEventListener('click', function (e) {
+                  window.open(link.href, link.target === '_blank' ? '_blank' : '_self');
+                });
+              }
+            }
+          });
+        });
+    </script>
 </body>
 </html>
