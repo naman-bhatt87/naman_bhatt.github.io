@@ -202,15 +202,10 @@ body {
 .hero-description,
 .hero-meta p,
 .hero-meta a {
-  color: var(--color-primary); /* Use main blue-grey for text */
+  color: black; /* Use black for text */
 }
 
 .hero-description {
-  color: var(--color-primary);
-}
-
-.hero-meta p,
-.hero-meta a {
   color: var(--color-primary);
 }
 
