@@ -134,29 +134,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Dashboard Card Interactions
     const dashboardCards = document.querySelectorAll('.dashboard-card');
-    
+
     dashboardCards.forEach(card => {
         const viewButton = card.querySelector('.btn');
-        
         if (viewButton) {
             viewButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Simulate dashboard loading
-                const originalText = this.textContent;
-                this.textContent = 'Loading...';
-                this.disabled = true;
-                
-                setTimeout(() => {
-                    this.textContent = 'Dashboard Loaded!';
-                    this.style.backgroundColor = '#10b981';
-                    
+                // Only prevent default if it's a button, not an anchor
+                if (this.tagName === 'BUTTON') {
+                    e.preventDefault();
+                    // Simulate dashboard loading
+                    const originalText = this.textContent;
+                    this.textContent = 'Loading...';
+                    this.disabled = true;
+
                     setTimeout(() => {
-                        this.textContent = originalText;
-                        this.disabled = false;
-                        this.style.backgroundColor = '';
-                    }, 2000);
-                }, 1000);
+                        this.textContent = 'Dashboard Loaded!';
+                        this.style.backgroundColor = '#10b981';
+
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                            this.disabled = false;
+                            this.style.backgroundColor = '';
+                        }, 2000);
+                    }, 1000);
+                }
+                // If it's an <a>, let the browser handle navigation
             });
         }
     });
