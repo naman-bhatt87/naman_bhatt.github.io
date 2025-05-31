@@ -262,22 +262,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Read More Button Interactions
     const readMoreButtons = document.querySelectorAll('.read-more-btn');
-    
+
     readMoreButtons.forEach(button => {
         button.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Simulate blog post loading
-            const originalText = this.textContent;
-            this.textContent = 'Loading...';
-            
-            setTimeout(() => {
-                this.textContent = 'Article Loaded!';
-                
+            // If the button is an <a>, let the browser handle navigation
+            if (this.tagName === 'A') return;
+
+            // Try to find an <a> with href inside the same blog card
+            const card = this.closest('.blog-card');
+            const link = card ? card.querySelector('a.read-more-btn[href]') : null;
+
+            if (link) {
+                // Redirect to the href (respect target)
+                if (link.target === '_blank') {
+                    window.open(link.href, '_blank');
+                } else {
+                    window.location.href = link.href;
+                }
+            } else {
+                // Fallback: Simulate blog post loading (if no link found)
+                e.preventDefault();
+                const originalText = this.textContent;
+                this.textContent = 'Loading...';
+
                 setTimeout(() => {
-                    this.textContent = originalText;
-                }, 2000);
-            }, 800);
+                    this.textContent = 'Article Loaded!';
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                    }, 2000);
+                }, 800);
+            }
         });
     });
 
