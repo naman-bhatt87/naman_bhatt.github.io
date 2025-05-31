@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIOps & MLOps Adoption Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <h1>AIOps & MLOps Adoption in Indian Enterprises</h1>
+            <p class="subtitle">2024-25 Strategic Analysis Dashboard</p>
+            <div class="header-stats">
+                <div class="stat-item">
+                    <span class="stat-number">59%</span>
+                    <span class="stat-label">AI Adoption Rate</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">$45.7B</span>
+                    <span class="stat-label">India AI Market by 2034</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">80%</span>
+                    <span class="stat-label">Exploring Agentic AI</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="tab-navigation">
+            <button class="tab-btn active" data-tab="overview">Overview & Trends</button>
+            <button class="tab-btn" data-tab="market">Market Statistics</button>
+            <button class="tab-btn" data-tab="challenges">Challenges & Solutions</button>
+            <button class="tab-btn" data-tab="success">Success Stories</button>
+            <button class="tab-btn" data-tab="regional">Regional Analysis</button>
+        </nav>
+
+        <!-- Tab Content -->
+        <main class="dashboard-content">
+            <!-- Overview & Trends Tab -->
+            <section id="overview-tab" class="tab-content active">
+                <div class="metrics-grid">
+                    <div class="card metric-card">
+                        <div class="card__body">
+                            <h3>Current Adoption Metrics</h3>
+                            <div class="metric-list">
+                                <div class="metric-item">
+                                    <span class="metric-label">AI Adoption in India</span>
+                                    <span class="metric-value">59%</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">MLOps Usage</span>
+                                    <span class="metric-value">39%</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Pilot to Production</span>
+                                    <span class="metric-value">56%</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">Financial Firms using GenAI</span>
+                                    <span class="metric-value">74%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Adoption Trends (2020-2025)</h3>
+                            <div class="chart-container">
+                                <canvas id="trendsChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts-grid">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Sector-wise AI Adoption</h3>
+                            <div class="chart-container">
+                                <canvas id="sectorChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Market Size Projection</h3>
+                            <div class="projection-data">
+                                <div class="projection-item">
+                                    <h4>Global MLOps Market</h4>
+                                    <p><strong>2024:</strong> $3.24B → <strong>2033:</strong> $8.68B</p>
+                                    <span class="status status--success">CAGR: 12.31%</span>
+                                </div>
+                                <div class="projection-item">
+                                    <h4>Global AIOps Market</h4>
+                                    <p><strong>2024:</strong> $11.7B → <strong>2028:</strong> $32.4B</p>
+                                    <span class="status status--info">CAGR: 22.7%</span>
+                                </div>
+                                <div class="projection-item">
+                                    <h4>India AI Market</h4>
+                                    <p><strong>2025:</strong> $10.15B → <strong>2034:</strong> $45.72B</p>
+                                    <span class="status status--warning">CAGR: 18.2%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Market Statistics Tab -->
+            <section id="market-tab" class="tab-content">
+                <div class="charts-grid">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>MLOps Market Growth</h3>
+                            <div class="chart-container">
+                                <canvas id="mlopsMarketChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>AIOps Market Growth</h3>
+                            <div class="chart-container">
+                                <canvas id="aiopsMarketChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="market-insights">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Key Market Insights</h3>
+                            <div class="insights-grid">
+                                <div class="insight-item">
+                                    <h4>Enterprise Adoption</h4>
+                                    <p>Large enterprises leading with 85% adoption in IT services sector</p>
+                                </div>
+                                <div class="insight-item">
+                                    <h4>Investment Trends</h4>
+                                    <p>$900M+ AI pipeline investments by major Indian companies</p>
+                                </div>
+                                <div class="insight-item">
+                                    <h4>Regional Distribution</h4>
+                                    <p>75% adoption in metros vs 25% in tier-3 cities</p>
+                                </div>
+                                <div class="insight-item">
+                                    <h4>Technology Focus</h4>
+                                    <p>MLOps automation and AIOps monitoring gaining traction</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Challenges & Solutions Tab -->
+            <section id="challenges-tab" class="tab-content">
+                <div class="card">
+                    <div class="card__body">
+                        <h3>Top 5 MLOps Implementation Challenges</h3>
+                        <div class="challenges-list">
+                            <div class="challenge-item">
+                                <div class="challenge-header">
+                                    <h4>Skills Gap</h4>
+                                    <div class="severity-indicator severity-high">
+                                        <span class="severity-bar" style="width: 85%"></span>
+                                        <span class="severity-text">85% Severity</span>
+                                    </div>
+                                </div>
+                                <p>Shortage of MLOps professionals with expertise in model deployment and monitoring</p>
+                            </div>
+                            
+                            <div class="challenge-item">
+                                <div class="challenge-header">
+                                    <h4>Data Management</h4>
+                                    <div class="severity-indicator severity-high">
+                                        <span class="severity-bar" style="width: 78%"></span>
+                                        <span class="severity-text">78% Severity</span>
+                                    </div>
+                                </div>
+                                <p>Complex data pipelines and governance requirements across multiple sources</p>
+                            </div>
+                            
+                            <div class="challenge-item">
+                                <div class="challenge-header">
+                                    <h4>Model Deployment</h4>
+                                    <div class="severity-indicator severity-medium">
+                                        <span class="severity-bar" style="width: 72%"></span>
+                                        <span class="severity-text">72% Severity</span>
+                                    </div>
+                                </div>
+                                <p>Scaling models from development to production environments efficiently</p>
+                            </div>
+                            
+                            <div class="challenge-item">
+                                <div class="challenge-header">
+                                    <h4>Security & Compliance</h4>
+                                    <div class="severity-indicator severity-medium">
+                                        <span class="severity-bar" style="width: 68%"></span>
+                                        <span class="severity-text">68% Severity</span>
+                                    </div>
+                                </div>
+                                <p>Meeting regulatory requirements and ensuring data protection standards</p>
+                            </div>
+                            
+                            <div class="challenge-item">
+                                <div class="challenge-header">
+                                    <h4>Infrastructure Costs</h4>
+                                    <div class="severity-indicator severity-medium">
+                                        <span class="severity-bar" style="width: 65%"></span>
+                                        <span class="severity-text">65% Severity</span>
+                                    </div>
+                                </div>
+                                <p>High compute and storage requirements for ML workloads</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="solutions-grid">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Technology Readiness Matrix</h3>
+                            <div class="readiness-matrix">
+                                <div class="matrix-item high">
+                                    <span class="matrix-label">Cloud Infrastructure</span>
+                                    <span class="matrix-score">High</span>
+                                </div>
+                                <div class="matrix-item medium">
+                                    <span class="matrix-label">MLOps Tools</span>
+                                    <span class="matrix-score">Medium</span>
+                                </div>
+                                <div class="matrix-item high">
+                                    <span class="matrix-label">Data Platforms</span>
+                                    <span class="matrix-score">High</span>
+                                </div>
+                                <div class="matrix-item low">
+                                    <span class="matrix-label">Governance</span>
+                                    <span class="matrix-score">Low</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Success Stories Tab -->
+            <section id="success-tab" class="tab-content">
+                <div class="success-stories-grid">
+                    <div class="card success-story">
+                        <div class="card__body">
+                            <div class="company-header">
+                                <h3>TCS</h3>
+                                <span class="status status--success">Enterprise AI</span>
+                            </div>
+                            <h4>AI Cloud Platform</h4>
+                            <div class="story-metrics">
+                                <div class="story-metric">
+                                    <span class="metric-label">Investment</span>
+                                    <span class="metric-value">$900M pipeline</span>
+                                </div>
+                                <div class="story-metric">
+                                    <span class="metric-label">Outcome</span>
+                                    <span class="metric-value">200+ AI engagements</span>
+                                </div>
+                                <div class="story-metric">
+                                    <span class="metric-label">Technology</span>
+                                    <span class="metric-value">MLOps automation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card success-story">
+                        <div class="card__body">
+                            <div class="company-header">
+                                <h3>HDFC Bank</h3>
+                                <span class="status status--info">Banking AI</span>
+                            </div>
+                            <h4>AI-Powered Operations</h4>
+                            <div class="story-metrics">
+                                <div class="story-metric">
+                                    <span class="metric-label">Investment</span>
+                                    <span class="metric-value">Enterprise deployment</span>
+                                </div>
+                                <div class="story-metric">
+                                    <span class="metric-label">Outcome</span>
+                                    <span class="metric-value">250k+ cheques/day</span>
+                                </div>
+                                <div class="story-metric">
+                                    <span class="metric-label">Technology</span>
+                                    <span class="metric-value">ML verification, EVA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card success-story">
+                        <div class="card__body">
+                            <div class="company-header">
+                                <h3>Infosys</h3>
+                                <span class="status status--warning">MLOps Services</span>
+                            </div>
+                            <h4>MLOps for Fortune 500</h4>
+                            <div class="story-metrics">
+                                <div class="story-metric">
+                                    <span class="metric-label">Investment</span>
+                                    <span class="metric-value">Azure Cloud MLOps</span>
+                                </div>
+                                <div class="story-metric">
+                                    <span class="metric-label">Outcome</span>
+                                    <span class="metric-value">12X improvement</span>
+                                </div>
+                                <div class="story-metric">
+                                    <span class="metric-label">Technology</span>
+                                    <span class="metric-value">MLflow, Databricks</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card success-story">
+                        <div class="card__body">
+                            <div class="company-header">
+                                <h3>Reliance Jio</h3>
+                                <span class="status status--success">Telecom AI</span>
+                            </div>
+                            <h4>Network Optimization AI</h4>
+                            <div class="story-metrics">
+                                <div class="story-metric">
+                                    <span class="metric-label">Investment</span>
+                                    <span class="metric-value">Multi-domain platform</span>
+                                </div>
+                                <div class="story-metric">
+                                    <span class="metric-label">Outcome</span>
+                                    <span class="metric-value">Real-time optimization</span>
+                                </div>
+                                <div class="story-metric">
+                                    <span class="metric-label">Technology</span>
+                                    <span class="metric-value">AIOps for telecom</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card success-story">
+                        <div class="card__body">
+                            <div class="company-header">
+                                <h3>Wipro</h3>
+                                <span class="status status--info">Quality Assurance</span>
+                            </div>
+                            <h4>MLOps Assurance</h4>
+                            <div class="story-metrics">
+                                <div class="story-metric">
+                                    <span class="metric-label">Investment</span>
+                                    <span class="metric-value">Testing automation</span>
+                                </div>
+                                <div class="story-metric">
+                                    <span class="metric-label">Outcome</span>
+                                    <span class="metric-value">Quality pipelines</span>
+                                </div>
+                                <div class="story-metric">
+                                    <span class="metric-label">Technology</span>
+                                    <span class="metric-value">A/B testing, monitoring</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Regional Analysis Tab -->
+            <section id="regional-tab" class="tab-content">
+                <div class="regional-grid">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Regional Adoption Distribution</h3>
+                            <div class="chart-container">
+                                <canvas id="regionalChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Government Initiatives</h3>
+                            <div class="initiatives-list">
+                                <div class="initiative-item">
+                                    <h4>IndiaAI Mission</h4>
+                                    <p>Rs 103.7B allocation for AI infrastructure and research</p>
+                                    <span class="status status--success">Active</span>
+                                </div>
+                                <div class="initiative-item">
+                                    <h4>Startup Ecosystem</h4>
+                                    <p>67 startup proposals received for AI development</p>
+                                    <span class="status status--info">Growing</span>
+                                </div>
+                                <div class="initiative-item">
+                                    <h4>GPU Infrastructure</h4>
+                                    <p>19 companies participated in GPU tender process</p>
+                                    <span class="status status--warning">In Progress</span>
+                                </div>
+                                <div class="initiative-item">
+                                    <h4>Digital India Bhashini</h4>
+                                    <p>Supporting 22 languages for inclusive AI</p>
+                                    <span class="status status--success">Live</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
